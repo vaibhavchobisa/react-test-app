@@ -1,5 +1,7 @@
-const PRODUCT = {
+export const PRODUCT = {
   LIST: "products/",
 };
 
-export { PRODUCT };
+export const CONTACTS = {
+  LIST: "contacts/"
+}
