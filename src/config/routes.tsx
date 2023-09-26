@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouteObject } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import { PRODUCT } from "../constants/page-paths.constants";
 import BasicLayout from "../layouts/basic.layout";
 import ProductList from "../pages/product/list";
@@ -13,8 +13,7 @@ const router = createBrowserRouter([
 
       // when the URL matches this segment
       path: '/' + PRODUCT.LIST,
-    }
-    ]
+    }]
   },
 
 ]);
