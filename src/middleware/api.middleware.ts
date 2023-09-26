@@ -1,4 +1,5 @@
 import axios from "axios";
+import { FC } from "react";
 import AppConfig from "../config/config";
 
 export const requestApiMiddleware = () => {
