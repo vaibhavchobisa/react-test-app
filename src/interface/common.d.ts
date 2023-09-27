@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type UrlType = string | null;
 
 interface PaginationUIInterface {
@@ -27,16 +29,17 @@ type PaginateDataType = {
 type Dropdown = Array<{ label: string; value: string }>;
 
 interface TypeaheadProps {
-  onChange: (value: string) => void;
+  onChange: (value: { value: string; label: React.ReactNode }) => Promise<void>;
   onSearch: (value: string) => void;
   onFocus: () => void;
-  filterOption: (
+  filterOption?: (
     input: string,
     option?: { label: string; value: string }
   ) => boolean;
   dropdown: Dropdown;
   dropdownLoading: boolean;
-  defaultValue?: string;
+  defaultValue?: { value: string; label: ReactNode } | null | undefined;
+  selectedValue?: { value: string; label: ReactNode } | null | undefined;
 }
 
 type DropdownApiDataType = Array<{id: string, company_name:string}>

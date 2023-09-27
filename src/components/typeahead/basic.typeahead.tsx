@@ -11,26 +11,33 @@ const Typeahead: React.FC<TypeaheadProps> = ({
   onChange,
   onSearch,
   onFocus,
-  filterOption,
+  // filterOption,
   dropdown,
   dropdownLoading,
-  // defaultValue
+  // defaultValue,
+  selectedValue,
 }) => (
-    <Select
-      showSearch
-      placeholder="Search products by company name"
-      optionFilterProp="value"
-      onChange={onChange}
-      onSearch={onSearch}
-      onFocus={onFocus}
-      filterOption={filterOption}
-      options={dropdown}
-      loading={dropdownLoading}
-      popupMatchSelectWidth={false}
-      dropdownStyle={dropdownStyles}
-      // defaultValue={defaultValue}
-      // value={defaultValue}
-    />
+  <Select
+    labelInValue
+    showSearch
+    placeholder="Search products by company name"
+    style={{ width: 275 }}
+    optionFilterProp="value"
+    onChange={onChange}
+    onSearch={onSearch}
+    onFocus={onFocus}
+    filterOption={false}
+    options={dropdown}
+    loading={dropdownLoading}
+    popupMatchSelectWidth={false}
+    dropdownStyle={dropdownStyles}
+    value={selectedValue}
+    getPopupContainer={(triggerNode) => triggerNode.parentElement}
+    // defaultValue={defaultValue}
+    virtual={false}
+    // allowClear
+    // value={defaultValue}
+  />
 );
 
 export default Typeahead;
